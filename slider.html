@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.next').click(function(){
+               if ($('#img-1').hasClass('active')){
+                   $('#img-1').removeClass('active')
+                   $('#img-2').addClass('active')
+               } else if ($('#img-2').hasClass('active')){
+                   $('#img-2').removeClass('active')
+                   $('#img-3').addClass('active')
+               } else if ($('#img-3').hasClass('active')){
+                   $('#img-3').removeClass('active')
+                   $('#img-4').addClass('active')
+               } else if ($('#img-4').hasClass('active')){
+                   $('#img-4').removeClass('active')
+                   $('#img-5').addClass('active')
+               } else if ($('#img-5').hasClass('active')){
+                   $('#img-5').removeClass('active')
+                   $('#img-6').addClass('active')
+               } else if ($('#img-6').hasClass('active')){
+                   $('#img-6').removeClass('active')
+                   $('#img-7').addClass('active')
+               }   
+            })
+            $('.pre').click(function(){
+               if ($('#img-7').hasClass('active')){
+                   $('#img-7').removeClass('active')
+                   $('#img-6').addClass('active')
+               } else if ($('#img-6').hasClass('active')){
+                   $('#img-6').removeClass('active')
+                   $('#img-5').addClass('active')
+               } else if ($('#img-5').hasClass('active')){
+                   $('#img-5').removeClass('active')
+                   $('#img-4').addClass('active')
+               } else if ($('#img-4').hasClass('active')){
+                   $('#img-4').removeClass('active')
+                   $('#img-3').addClass('active')
+               } else if ($('#img-3').hasClass('active')){
+                   $('#img-3').removeClass('active')
+                   $('#img-2').addClass('active')
+               } else if ($('#img-2').hasClass('active')){
+                   $('#img-2').removeClass('active')
+                   $('#img-1').addClass('active')
+               }   
+            })
+        })
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .body{
+            overflow: hidden;
+        }
+
+        .main-div {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .next {
+            position: absolute;
+            top: 32%;
+            right: 2%;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            background-color: white;
+            cursor: pointer;
+            vertical-align: middle;
+            display: inline;
+        }
+        .next:hover{
+            background-color: black;
+            color: white;
+        }
+        .next p{
+            font-size: 30px;
+        }
+        .pre {
+            position: absolute;
+            top: 32%;
+            left: 2%;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            background-color: white;
+            cursor: pointer;
+        }
+        .pre:hover{
+            background-color: black;
+            color: white;
+        }
+        .pre p{
+            font-size: 30px;
+        }
+        .active{
+            width: 100%;
+            height: 500px;
+            display: block;
+        }
+        img{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-div">
+        <div class="slider-imgs-main-div">
+            <div class="next"><p>&#8250;</p></div>
+            <img class="active" id="img-1" src="./slider-images/adomas-aleno-4vrZpOo7fTc-unsplash.jpg" alt="1">
+            <img id="img-2" src="./slider-images/caspar-camille-rubin-fPkvU7RDmCo-unsplash.jpg" alt="2">
+            <img id="img-3" src="./slider-images/davey-gravy-oii8cLseh30-unsplash.jpg" alt="3">
+            <img id="img-4" src="./slider-images/kelly-sikkema-v9FQR4tbIq8-unsplash.jpg" alt="4">
+            <img id="img-5" src="./slider-images/maxwell-nelson-Se9ufo2dO_g-unsplash.jpg" alt="5">
+            <img id="img-6" src="./slider-images/maxwell-nelson-VJeAZr-Bu9E-unsplash.jpg" alt="6">
+            <img id="img-7" src="./slider-images/veron-wessels-IN5S22T9yaU-unsplash.jpg" alt="7">
+            <div class="pre"><p>&#8249;</p></div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

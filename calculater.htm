@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculater</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            // var lv = ($('.input-field').val())
+            // alert(lv.slice(-1))
+            // $('.btn').click(function(){
+            //     if ($(this).hasClass('oper')){
+            //         alert('this is an operator')
+            //     } else {
+            //         alert('this is not an opertaor')
+            //     }
+            // })
+            $('.oper').click(function(){ 
+                // $('.input-field').val($('.input-field').val() + $(this).val())
+
+                   var getval = $(this).attr('value');
+                   var setval = $('.input-field').val();
+                //    var sum = setval+getval;
+                //     $('.input-field').val(sum);
+                    var flsum = setval.slice(-1);
+                    // alert(flsum);
+                    if (flsum != "+" && flsum != "-" && flsum != "*" && flsum != "/"){
+                        var getval = $(this).attr('value');
+                        var ifsetval = $('.input-field').val();
+                        var ifsum = $('.input-field').val(ifsetval+getval);
+                        // var jhfjdh = flsum.replace(/.$/, nval);
+                    } 
+                    if (flsum == "+" || flsum == "-" || flsum == "*" || flsum == "/"){
+                        var getval = $(this).attr('value');
+                        var ifsetval = $('.input-field').val();
+                        // var ifsum = $('.input-field').val(ifsetval+getval);
+                        var jhfjdh = ifsetval.replace(/.$/, getval);
+                        $('.input-field').val(jhfjdh);
+                    }
+            });
+
+            $('.dig').click(function(){
+                // $('.input-field').val($('.input-field').val() + $(this).val())
+                var get_val = $(this).attr('value');
+                var set_val = $('.input-field').val();
+                var digsum = set_val+get_val;
+                $('.input-field').val(digsum);
+            });
+
+            $('.clr').click(function(){
+                $('.input-field').val('')
+            })
+
+            $('.equ-btn').click(function(){
+                var lastval = $('.input-field').val(eval ($('.input-field').val()));
+            })
+
+
+
+
+
+
+
+
+
+            // $('.ad-btn').click(function () {   
+            //     $('.input-field').val();  
+            // })
+            // $('.sub-btn').click(function () {
+            //     var sub = '-';
+            //     $('.input-field').val(sub);  
+            // })
+            // $('.mul-btn').click(function () {
+            //     var mul = '*';
+            //     $('.input-field').val(mul); 
+            // })
+            // $('.di-btn').click(function () {
+            //     var di = '/';
+            //     $('.input-field').val(di);
+            // })
+            // $('.se-btn').click(function () {
+            //     var se = '7';
+            //     $('.input-field').val(se);
+            // })
+            // $('.ei-btn').click(function () {
+            //     var ei = '8';
+            //     $('.input-field').val(ei);
+            // })
+            // $('.ni-btn').click(function () {
+            //     var ni = '9';
+            //     $('.input-field').val(ni);
+            // })
+            // $('.ni-btn').click(function () {
+            //     var ni = '9';
+            //     $('.input-field').val(ni);
+            // })
+            // $('.fi-btn').click(function () {
+            //     var fi = '5';
+            //     $('.input-field').val(fi);
+            // })
+            // $('.fu-btn').click(function () {
+            //     var fu = '4';
+            //     $('.input-field').val(fu);
+            // })
+            // $('.si-btn').click(function () {
+            //     var si = '6';
+            //     $('.input-field').val(si);
+            // })
+            // $('.on-btn').click(function () {
+            //     var on = '1';
+            //     $('.input-field').val(on);
+            // })
+            // $('.tw-btn').click(function () {
+            //     var tw = '2';
+            //     $('.input-field').val(tw);
+            // })
+            // $('.th-btn').click(function () {
+            //     var th = '3';
+            //     $('.input-field').val(th);
+            // })
+            // $('.ze-btn').click(function () {
+            //     var ze = '0';
+            //     $('.input-field').val(ze);
+            // })
+            // $('.do-btn').click(function () {
+            //     var decimal = '.';
+            //     $('.input-field').val(decimal);
+            // })
+            // $('.clr-btn').click(function () {
+            //     var clr = '';
+            //     $('.input-field').val(clr);  
+            // })       
+        })
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-div {
+            width: 100%;
+            height: auto;
+        }
+
+        .cal-main-div {
+            width: 396px;
+            height: 365px;
+            border: 1px solid black;
+            margin: 60px auto;
+            border-radius: 5px;
+        }
+
+        .input-field {
+            width: 100%;
+            height: 65px;
+            border-bottom: 1px solid #000;
+            border-top: 0px;
+            border-left: 0px;
+            border-right: 0px;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: right;
+            font-size: 20px;
+            color: tomato;
+        }
+
+        .oper {
+            width: 89px;
+            height: 50px;
+            float: left;
+            margin: 5px;
+            border: 1px grey solid;
+            background: tomato;
+            cursor: pointer;
+        }
+        .oper:hover {
+            border: black 1px solid;
+        }
+        .clr {
+            width: 89px;
+            height: 50px;
+            float: left;
+            margin: 5px;
+            border: 1px grey solid;
+            background: tomato;
+            cursor: pointer;
+        }
+        .clr:hover {
+            border: black 1px solid;
+        }
+        .sub-btn {
+            width: 89px;
+            height: 50px;
+            float: left;
+            margin: 5px;
+            border: 1px grey solid;
+            background: tomato;
+            cursor: pointer;
+        }
+        .sub-btn:hover {
+            border: black 1px solid;
+        }
+        .mul-btn {
+            width: 89px;
+            height: 50px;
+            float: left;
+            margin: 5px;
+            border: 1px grey solid;
+            background: tomato;
+            cursor: pointer;
+        }
+        .mul-btn:hover {
+            border: black 1px solid;
+        }
+
+        .di-btn {
+            width: 89px;
+            height: 50px;
+            float: left;
+            margin: 5px;
+            border: 1px grey solid;
+            background: tomato;
+            cursor: pointer;
+            
+        }
+        .di-btn:hover {
+            border: black 1px solid;
+        }
+
+        .dig {
+            width: 89px;
+            height: 50px;
+            float: left;
+            margin: 5px;
+            background: white;
+            border: 1px grey solid;
+            cursor: pointer;
+        }
+
+        .dig:hover {
+            border: tomato 1px solid;
+        }
+
+        .ei-btn {
+            width: 89px;
+            height: 50px;
+            float: left;
+            margin: 5px;
+            background: white;
+            border: 1px grey solid;
+            cursor: pointer;
+        }
+
+        .ei-btn:hover {
+            border: tomato 1px solid;
+        }
+
+        .ni-btn {
+            width: 89px;
+            height: 50px;
+            float: left;
+            margin: 5px;
+            background: white;
+            border: 1px grey solid;
+            cursor: pointer;
+        }
+
+        .ni-btn:hover {
+            border: tomato 1px solid;
+        }
+
+        .fi-btn {
+            width: 89px;
+            height: 50px;
+            float: left;
+            margin: 5px;
+            background: white;
+            border: 1px grey solid;
+            cursor: pointer;
+        }
+
+        .fi-btn:hover {
+            border: tomato 1px solid;
+        }
+
+        .fu-btn {
+            width: 89px;
+            height: 50px;
+            float: left;
+            margin: 5px;
+            background: white;
+            border: 1px grey solid;
+            cursor: pointer;
+        }
+
+        .fu-btn:hover {
+            border: tomato 1px solid;
+        }
+
+        .si-btn {
+            width: 89px;
+            height: 50px;
+            float: left;
+            margin: 5px;
+            background: white;
+            border: 1px grey solid;
+            cursor: pointer;
+        }
+
+        .si-btn:hover {
+            border: tomato 1px solid;
+        }
+
+        .on-btn {
+            width: 89px;
+            height: 50px;
+            float: left;
+            margin: 5px;
+            background: white;
+            border: 1px grey solid;
+            cursor: pointer;
+        }
+
+        .on-btn:hover {
+            border: tomato 1px solid;
+        }
+
+        .tw-btn {
+            width: 89px;
+            height: 50px;
+            float: left;
+            margin: 5px;
+            background: white;
+            border: 1px grey solid;
+            cursor: pointer;
+        }
+
+        .tw-btn:hover {
+            border: tomato 1px solid;
+        }
+
+        .th-btn {
+            width: 89px;
+            height: 50px;
+            float: left;
+            margin: 5px;
+            background: white;
+            border: 1px grey solid;
+            cursor: pointer;
+        }
+
+        .th-btn:hover {
+            border: tomato 1px solid;
+        }
+
+        .ze-btn {
+            width: 89px;
+            height: 50px;
+            float: left;
+            margin: 5px;
+            background: white;
+            border: 1px grey solid;
+            cursor: pointer;
+        }
+
+        .ze-btn:hover {
+            border: tomato 1px solid;
+        }
+
+        .do-btn {
+            width: 89px;
+            height: 50px;
+            float: left;
+            margin: 5px;
+            background: white;
+            border: 1px grey solid;
+            cursor: pointer;
+        }
+
+        .do-btn:hover {
+            border: tomato 1px solid;
+        }
+
+        .clr-btn {
+            width: 89px;
+            height: 50px;
+            float: left;
+            margin: 5px;
+            background: white;
+            border: 1px grey solid;
+            cursor: pointer;
+        }
+
+        .clr-btn:hover {
+            border: tomato 1px solid;
+        }
+
+        .equ-btn {
+            width: 386px;
+            height: 50px;
+            margin: 5px;
+            background: tomato;
+            border: 1px grey solid;
+            cursor: pointer;
+        }
+
+        .equ-btn:hover {
+            border: black 2px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-div">
+        <div class="cal-main-div">
+            <div class="input-field-main">
+                <input class="input-field" type="text">
+            </div>
+            <input type="button"  class="btn oper" value="+">
+            <input type="button"  class="btn oper" value="-">
+            <input type="button"  class="btn oper" value="*">
+            <input type="button"  class="btn oper" value="/">
+            <input type="button"  class="btn dig" value="7">
+            <input type="button"  class="btn dig" value="8">
+            <input type="button"  class="btn dig" value="9">
+            <input type="button"  class="btn dig" value="5">
+            <input type="button"  class="btn dig" value="4">
+            <input type="button"  class="btn dig" value="6">
+            <input type="button"  class="btn dig" value="1">
+            <input type="button"  class="btn dig" value="2">
+            <input type="button"  class="btn dig" value="3">
+            <input type="button"  class="btn dig" value="0">
+            <input type="button"  class="btn dig" value=".">
+            <input type="button" class="clr" value="AC">
+            <input type="button" class="equ-btn" value='='>
+            <!-- <button class="ad-btn">+</button>
+            <button class="sub-btn">-</button>
+            <button class="mul-btn">*</button>
+            <button class="di-btn">/</button>
+            <button class="dig">7</button>
+            <button class="dig">8</button>
+            <button class="dig">9</button>
+            <button class="dig">5</button>
+            <button class="dig">4</button>
+            <button class="dig">6</button>
+            <button class="dig">1</button>
+            <button class="dig">2</button>
+            <button class="dig">3</button>
+            <button class="dig">0</button>
+            <button class="do-btn">.</button>
+            <button class="clr-btn">AC</button>
+            <button class="equ-btn">=</button> -->
+            <!-- <button class="ad-btn">+</button>
+            <button class="sub-btn">-</button>
+            <button class="mul-btn">*</button>
+            <button class="di-btn">/</button>
+            <button class="se-btn dig">7</button>
+            <button class="ei-btn dig">8</button>
+            <button class="ni-btn dig">9</button>
+            <button class="fi-btn dig">5</button>
+            <button class="fu-btn dig">4</button>
+            <button class="si-btn dig">6</button>
+            <button class="on-btn dig">1</button>
+            <button class="tw-btn dig">2</button>
+            <button class="th-btn dig">3</button>
+            <button class="ze-btn dig">0</button>
+            <button class="do-btn">.</button>
+            <button class="clr-btn">AC</button>
+            <button class="equ-btn">=</button> -->
+        </div>
+    </div>
+</body>
+
+</html>

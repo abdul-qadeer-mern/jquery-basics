@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get value from input field</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.field-1').keyup(function(){
+                var value = ($( this ).val());
+                $('.field-2').val(value);
+                $('.div2').text(value);
+                // alert(value);
+            });
+            
+        })
+
+
+
+    </script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .input{
+            width: 98%;
+            margin: 60px auto;
+        }
+        .field-1{
+            padding: 20px;
+            margin-right: 10px;
+            width: 200px;
+        }
+        .field-2{
+            padding: 20px;
+            margin-left: 10px;
+            width: 200px;
+        }
+        .form{
+            margin-left: 50px;
+        }
+        .div2{
+            width: 90%;
+            margin: 20px auto;
+            border: 1px black solid;
+            height: 300px;
+        }
+        p{
+            margin-left: 67px;
+        }
+    </style>
+</head>
+<body>
+    <div class="input">
+        <form class="form" action=".php">
+            Field 1
+            <input class="field-1" type="text" >
+            Field 2
+            <input class="field-2" type="text" >
+        </form>
+    </div>
+    <p>Div</p>
+    <div class="div2">
+
+    </div>
+</body>
+</html>

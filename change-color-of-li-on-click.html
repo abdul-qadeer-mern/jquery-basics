@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First lecture</title>
+    <script type="text/javascript" src="jquery.js">
+    </script>
+</head>
+<body>
+    <script>
+        $(document).ready(function() {
+            $('p').append('<b> from faisalabad</b>');
+            $('ul li:nth-child(1)').children().css('color', 'green');
+            $('ul li:nth-child(3) ul').children().css('color', 'blue');
+
+
+            $('p').click(function (){
+                $('h1').css('color', 'red');
+            });
+            $('.li1 ul li:nth-child(1)').click(function (){
+                $(this).siblings().css('color', 'red');
+            });
+            $('.li2 ul li:nth-child(2)').click(function (){
+                $(this).siblings().css('color', 'red');
+            });
+            $('.li3 ul li:nth-child(3)').click(function (){
+                $(this).siblings().css('color', 'red');
+            });
+
+        })
+    </script>
+<div class="continer">
+    <p>qadeer jutt</p>
+    <h1>my first assignment</h1>
+    <ul>
+        <li class="li1">list item 1
+            <ul>
+                <li>list item 1-1</li>
+                <li>list item 1-2</li>
+                <li>list-item 1-3</li>
+            </ul>
+        </li>
+        <li class="li2">list item 2
+            <ul>
+                <li>list item 2-1</li>
+                <li>list item 2-2</li>
+                <li>list-item 2-3</li>
+            </ul>
+        </li>
+        <li class="li3">list item 3
+            <ul>
+                <li>list item 3-1</li>
+                <li>list item 3-2</li>
+                <li>list-item 3-3</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+    
+</body>
+</html>

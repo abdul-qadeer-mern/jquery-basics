@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chota-cal</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.oper').click(function(){
+                var getval = $(this).attr('value')
+                var setval = $('.field').val()
+                // var opsum = $('.field').val(setval+getval)
+                var opsum = setval.slice(-1)
+                if (opsum != "+" && opsum != "-" && opsum != "*" && opsum != "/"){
+                    var ifgetval = $(this).attr('value')
+                    var ifsetval = $('.field').val()
+                    var ifopsum = $('.field').val(ifsetval+ifgetval)
+                } 
+                else if (opsum == "+" || opsum == "-" || opsum == "*" || opsum == "/"){
+                    var ifgetval = $(this).attr('value')
+                    var ifsetval = $('.field').val()
+                    // var ifopsum = $('.field').val(ifsetval+ifgetval)
+                    var ifsval = ifsetval.replace(/.$/, ifgetval)
+                    $('.field').val(ifsval)
+                } 
+            })
+
+            $('.dig').click(function(){
+                var diggetval = $(this).attr('value')
+                var digsetval = $('.field').val()
+                var digsum = $('.field').val(digsetval+diggetval)
+            })
+
+
+            $('.clr-btn').click(function(){
+                $('.field').val("")
+            })
+            $('.equ-btn').click(function(){
+                $('.field').val(eval($('.field').val()))
+            })
+            $('.b-btn').click(function(){
+                var fval = $('.field').val()
+                var rval = fval.replace(/.$/,"")
+                $('.field').val(rval)
+            })
+        })
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            width: 20%;
+            margin: 20px auto;
+            border: 1px solid black;
+            overflow: hidden;
+        }
+        input{
+            margin: 5px;
+            padding: 20px;
+            text-align: right;
+        }
+        .field{
+            width: 81%;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <input type="text" class="field"><br><br>
+        <input type="button" value="1" class="btn dig">
+        <input type="button" value="2" class="btn dig">
+        <input type="button" value="3" class="btn dig">
+        <input type="button" value="4" class="btn dig">
+        <input type="button" value="+" class="btn oper">
+        <input type="button" value="-" class="btn oper">
+        <input type="button" value="*" class="btn oper">
+        <input type="button" value="/" class="btn oper">
+        <input type="button" value="=" class="btn equ-btn">
+        <input type="button" value="AC" class="btn clr-btn">
+        <input type="button" value="->" class="btn b-btn">
+
+    </div>
+</body>
+</html>

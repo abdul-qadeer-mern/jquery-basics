@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field text alert</title>
+    <script src="jquery.js"></script>
+    <script>
+            $(document).ready(function(){
+            $('.btn2').click(function(){
+                var fv = $('.f').val();
+                var fv2 = $('.f2').val();
+                if (fv2 == ""){
+                    alert(fv);
+                }
+                else if (fv == "") {
+                    alert(fv2);
+                }
+                else {
+                    alert(fv+fv2)
+
+                }
+
+            })
+            
+        })
+    </script>
+
+</head>
+<body>
+    <div class="main">
+        <input type="text" class="f">
+        <input type="text" class="f2">
+        <input type="button" class="btn2" value="submit">
+    </div>
+</body>
+</html>

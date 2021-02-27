@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input field calculator</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.btn').click(function(){
+            var f= $('.first').val()
+            var o= $('.oper').val()
+            var s= $('.second').val()
+            $('.total').val(eval(f + o + s))
+            })
+             
+        })
+    </script>
+    <style>
+        input{
+            margin: 10px;
+            padding: 5px;
+        }
+        p{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <p>First value</p>
+    <input type="text" class="first">
+    <p>Operator</p>
+    <input type="text" class="oper">
+    <p>Second value</p>
+    <input type="text" class="second">
+    <p>Result</p>
+    <input type="text" class="total">
+    <input type="button" value="calculate" class="btn">
+</body>
+</html>

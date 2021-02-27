@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5th assignment</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Tree structure
+            // $('.it1_1').css('margin-left', '-310px')
+            // $('.it1_1').css('margin-top', '20px')
+
+
+            // $('.11-1').css('margin-left', '-150px')
+            // $('.11-1').css('margin-top', '20px')
+
+
+            // $('.11-2').css('margin-left', '100px')
+            // $('.11-2').css('margin-top', '-20px')
+
+            // $('.1-21').css('margin-left', '-150px')
+            // $('.1-21').css('margin-top', '20px')
+
+
+            // $('.1-22').css('margin-left', '100px')
+            // $('.1-22').css('margin-top', '-20px')
+
+
+            // $('.it1_2').css('margin-left', '250px',)
+            // $('.it1_2').css('margin-top', '-55px',)
+
+            // //1st Jado
+            // $('.a01').click(function(){
+            //     $('.a1').css('color', 'red');
+            //     $('.a2').css('color', 'red');
+            // });
+            // //2nd Jado
+            // $('.a1').click(function(){
+            //     $('.a2').css('background-color', 'red');
+            // });
+            // $('.a1').click(function(){
+            //     $('.a11-1').css('color', 'green');
+            //     $('.a11-2').css('color', 'green');
+            // });
+            // //3rd Jado
+            // $('.a2').click(function(){
+            //     $('.a1').css('background-color', 'red');
+            // });
+            // $('.a2').click(function(){
+            //     $('.a1-21').css('color', 'green');
+            //     $('.a1-22').css('color', 'green');
+            // });
+            // //4th Jado
+            // $('.a11-1').click(function(){
+            //     $('.a11-2').css('color', 'pink');
+            // });
+            //  //5th Jado
+            // $('.a1-21').click(function(){
+            //     $('.a1-22').css('color', 'pink');
+            // });
+            $('ul li ul li:eq(0)').css('margin-left', '-310px');
+            $('ul li ul li:eq(0)').css('margin-top', '20px')
+            $('ul li ul li:eq(1)').css('margin-left', '-150px');
+            $('ul li ul li:eq(2)').css('margin-left', '150px');
+            $('ul li ul li:eq(2)').css('margin-top', '-19px')
+
+            $('ul li ul li:eq(3)').css('margin-left', '310px');
+            $('ul li ul li:eq(3)').css('margin-top', '-36px')
+            $('ul li ul li:eq(4)').css('margin-left', '-150px');
+            $('ul li ul li:eq(5)').css('margin-left', '150px');
+            $('ul li ul li:eq(5)').css('margin-top', '-19px');
+
+            //1st Jado
+            $('ul li a:eq(0)').click(function(){
+                $('ul li ul li a:eq(0)').css('color', 'red');
+                $('ul li ul li a:eq(3)').css('color', 'red');
+            });
+            //2nd Jado
+            $('ul li ul li a:eq(0)').click(function(){
+                $('ul li ul li a:eq(3)').css('background-color', 'red');
+            });
+            $('ul li ul li a:eq(0)').click(function(){
+                $('ul li ul li a:eq(1)').css('color', 'green');
+                $('ul li ul li a:eq(2)').css('color', 'green');
+            });
+            //3rd Jado
+            $('ul li ul li a:eq(3)').click(function(){
+                $('ul li ul li a:eq(0)').css('background-color', 'red');
+            });
+            $('ul li ul li a:eq(3)').click(function(){
+                $('ul li ul li a:eq(4)').css('color', 'green');
+                $('ul li ul li a:eq(5)').css('color', 'green');
+            });
+            //4th Jado
+            $('ul li ul li a:eq(4)').click(function(){
+                $('ul li ul li a:eq(5)').css('color', 'pink');
+            });
+             //5th Jado
+            $('ul li ul li a:eq(1)').click(function(){
+                $('ul li ul li a:eq(2)').css('color', 'pink');
+            });
+            
+        })
+            
+
+
+    </script>
+
+
+    <style>
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .main{
+            width: 100%;
+        }
+        .list{
+            border: 1px black solid;
+            padding: 20px;
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="list">
+            <ul>
+                <li class="it1"> <a class="a01">item 1</a> 
+                    <ul>
+                        <li class="it1_1"><a class="a1">item 1-1</a> 
+                            <ul>
+                                <li class="11-1"> <a class="a11-1">item 1-11</a></li>
+                                <li class="11-2"><a class="a11-2"> item 1-12</a></li>
+                            </ul>
+                        </li>
+                        <li class="it1_2"><a class="a2">item 1-2</a> 
+                            <ul>
+                                <li class="1-21"><a class="a1-21">item 1-21</a></li>
+                                <li class="1-22"><a class="a1-22"> item 1-22</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

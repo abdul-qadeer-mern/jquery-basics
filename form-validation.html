@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.btn').click(function () {
+                // var fname = $('.fname').val()
+                // var ind = fname.indexOf('1')
+                // if (ind == true) {
+                //     alert(ind)
+                // } else {
+                //     alert('fname don\'t have 1')
+                // }
+
+                // Getting value of all inputs
+
+                var fname = $('.fname').val()
+                alert(fname)
+                var lname = $('.lname').val()
+                alert(lname)
+                var gval = $("input[name=gender]:checked").val()
+                alert(gval)
+                var hval = $('input[name=hobby]:checked').val()
+                alert(hval)
+                var dval = $('#dg').find(':selected').text()
+                alert(dval)
+                var disval = $('#dis').find(':selected').text()
+                alert(disval)
+                var desval = $('#des').val()
+                alert(desval)
+                var adval = $('.ad').val()
+                alert(adval)
+                var rolval = $('.rol').val()
+                alert(rolval)
+                var emailval = $('.email').val()
+                alert(emailval)
+                var passwordval = $('.password').val()
+                alert(passwordval)
+
+                // Making border red of empty fields
+
+                if (fname == "") {
+                    $('.fname').css('border-color', 'red')
+                }
+                if (lname == "") {
+                    $('.lname').css('border-color', 'red')
+                }
+                if (desval == "") {
+                    $('#des').css('border-color', 'red')
+                }
+                if (adval == "") {
+                    $('.ad').css('border-color', 'red')
+                }
+                if (rolval == "") {
+                    $('.rol').css('border-color', 'red')
+                }
+                if (emailval == "") {
+                    $('.email').css('border-color', 'red')
+                }
+                if (passwordval == "") {
+                    $('.password').css('border-color', 'red')
+                }
+                
+                // Validation of fname, lname, and rollnmuber
+
+                if (fname.match(/^[a-zA-Z]+$/)) {
+                    alert('value is right')
+                } else {
+                    alert('value is wrong')
+                }
+                if (lname.match(/^[a-zA-Z]+$/)) {
+                    alert('value is right')
+                } else {
+                    alert('value is wrong')
+                }
+                if (rolval.match(/^[0-9]+$/)) {
+                    alert('value is right')
+                } else {
+                    alert('value is wrong')
+                }
+
+                // Validation of email   
+
+                var reval = /^[a-z]+@+[a-z]+[.]+[a-z]+$/
+                if (emailval.match(reval)){
+                    alert('email is right')
+                } else {
+                    alert('email is wrong')
+                }
+
+                // Validation of password
+                
+                rpval1 = /[a-zA-Z0-9]{8,}/
+                if (passwordval.match(rpval1)){
+                    alert('Password contain 8 or more characters')
+                } else {
+                    alert('Minimum 8 characters requird')
+                }
+                var rpval2 = /[A-Z]/
+                if (passwordval.match(rpval2)){
+                    alert('Password contain a capital latter')
+                } else {
+                    alert('At least one capital latter requird')
+                }
+                var rpval3 = /[\d]/
+                if (passwordval.match(rpval3)){
+                    alert('Password contain a number')
+                } else {
+                    alert('At least one number requird')
+                }
+                var rpval3 = /[!@#$%^&*()]/
+                if (passwordval.match(rpval3)){
+                    alert('Password contain special character')
+                } else {
+                    alert('At least one special character requird')
+                }
+                var passwordval2 = $('.password2').val()
+                if (passwordval == passwordval2){
+                    alert('password is matched')
+                } else {
+                    alert('password does not match with field 1')
+                }
+
+                //     
+                //    $('.m-btn').css('border-color', 'red') 
+                //    $('.f-btn').css('border-color', 'red') 
+                //    $('.t-btn').css('border-color', 'red') 
+            })
+        })
+
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .fname {
+            border: 1px gray solid;
+        }
+
+        .lname {
+            border: 1px gray solid;
+        }
+
+        .main-div {
+            width: 50%;
+            margin: 40px auto;
+            border: solid 1px black;
+            padding: 20px;
+        }
+
+        .g-btn {
+            margin: 20px 10px 10px 20px;
+            border: 1px gray solid;
+        }
+
+        .h-btn {
+            margin: 20px 10px 10px 20px;
+            border: 1px gray solid;
+        }
+
+        #dg {
+            width: 150px;
+            margin-top: 20px;
+            border: 1px gray solid;
+        }
+
+        textarea {
+            border: 1px gray solid;
+        }
+
+        select {
+            border: 1px gray solid;
+        }
+
+        #dis {
+            width: 150px;
+            margin-top: 20px;
+            border: 1px gray solid;
+        }
+
+        .rol {
+            border: 1px gray solid;
+        }
+
+        .email {
+            border: 1px gray solid;
+        }
+
+        .password {
+            border: 1px gray solid;
+        }
+
+        .btn {
+            padding: 5px;
+            border: 1px gray solid;
+        }
+
+        .btn:hover {
+            background-color: gray;
+            border-color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-div">
+        <form action="#" name="registration">
+            First Name: <input type="text" class="fname">
+            Last Name: <input type="text" class="lname"><br>
+            Gender: <input type="radio" name="gender" class="g-btn m-btn" value="Male">Male
+            <input type="radio" name="gender" value="Female" class="g-btn f-btn">Female
+            <input type="radio" name="gender" value="Transgender" class="g-btn t-btn">Transgender<br>
+            Hobbies: <input type="checkbox" name="hobby" value="cricket" class="h-btn">Cricket
+            <input type="checkbox" name="hobby" value="football" class="h-btn">Football
+            <input type="checkbox" name="hobby" value="reading" class="h-btn">Reading<br>
+            Degree: <select name="Degree" id="dg">
+                <option value="MSc">MSc</option>
+                <option value="M.Phil">MPhil</option>
+            </select><br>
+            District: <select name="Degree" id="dis">
+                <option value="Punjab">Punjab</option>
+                <option value="Sindh">Sindh</option>
+            </select><br><br>
+            Description: <br><textarea name="description" id="des" cols="40" rows="3"></textarea><br><br>
+            Address: <br><textarea name="address" id="address" class="ad" cols="40" rows="3"></textarea><br><br>
+            Roll # <input type="number" class="rol"><br><br>
+            Email: <input type="email" class="email"><br><br>
+            Password: <input type="password" class="password"><br><br>
+            Password: <input type="password" class="password2"><br><br>
+            <input type="button" class="btn" value="Submit"><br><br>
+        </form>
+    </div>
+</body>
+
+</html>

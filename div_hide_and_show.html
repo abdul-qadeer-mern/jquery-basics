@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4th assignment</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.left_div').mouseenter(function(){
+                $('.left_div').css('background-color', 'lightgrey')
+            });
+            $('.left_div').mouseleave(function(){
+                $('.left_div').css('background-color', 'white')
+            });
+            $('.right_div').mouseenter(function(){
+                $('.right_div').css('background-color', 'lightblue')
+            });
+            $('.right_div').mouseleave(function(){
+                $('.right_div').css('background-color', 'white')
+            });
+
+
+            // $('.butn').click(function(){
+            //     $('left_div').hide()
+                
+                
+            // })
+            $('.butn').click(function(){
+                // $('.right_div').css('display', 'none');
+               if ($('#first').is(":visible") && $('#second').is(":visible")){
+                    $('#first').hide();
+                } else if ($('#second').is(":visible")){
+                    $('#second').hide();
+                } else if ($('#first').is(":hidden") && $('#second').is(":hidden")){
+                    $('#first').show();     
+                } else if ($('#first').is(':visible')){
+                    $('#second').show();
+                }
+               
+                // else{
+                //     alert('nothing else');
+                // }
+                // if ($('#second').is(":hidden")){
+                //     $('#second').show();
+                // };
+                
+            });
+            // $('.butn').click(function(){
+            //     $('left_div').is(':visible');
+            //     $('left_div').css('display','none');
+            // });
+
+            
+                
+            
+            // if ($('left_div').is(':visible') == true ){
+            //     $(this).css('display','none');
+            // }
+            // $('.butn').click(function(){
+            //     $('.left_div').show();
+            // });
+            // $('.butn').click(function(){
+            //     $('.right_div').show();
+            // });
+        })
+    </script>
+    
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            width: 100%;
+            margin: 20px auto;
+        }
+        .left_div{
+            width: 49%;
+            height: 100px;
+            float: left;
+            border: 1px solid black;
+            margin-right:20px;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .right_div{
+            width: 49%;
+            height: 100px;
+            float: right;
+            border: 1px solid black;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .wraper{
+            width: 90%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .btn{
+            text-align: center;
+            float: none;
+            margin: 20px;
+        }
+        .butn{
+            width: 100px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="wraper">
+            <div class="left_div" id="first">
+                <p>1</p>
+            </div>
+            <div class="right_div" id="second">
+                <p>2</p>
+            </div>
+        </div> 
+        <div class="btn">
+            <input class="butn" type="button" value="Jado">
+        </div> 
+    </div>
+</body>
+</html>

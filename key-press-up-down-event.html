@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2nd assignment</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function (){
+            $('.text').keypress(function (){
+                var val= $(this).val();
+                alert(val);
+            });
+            $('.text1').keydown(function (){
+                var val= $(this).val();
+                alert(val);
+            });
+            $('.text2').keyup(function (){
+                var val= $(this).val();
+                alert(val);
+            });
+        });
+    </script>
+    <div class="list">
+        <ul>
+            <li>list item 1</li>
+            <li>list item 2</li>
+            <li>list item 3</li>
+        </ul>
+    </div>
+    <div class="filed">
+        <input type="button" value="jado" class="button">
+        <input type="text" class="text" size="20">
+        <input type="text" class="text1" size="20">
+        <input type="text" class="text2" size="20">
+    </div>
+    
+</body>
+</html>
